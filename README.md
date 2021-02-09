@@ -1,5 +1,9 @@
 # Gatheway
 
+### Logo
+
+![icon](https://github.com/mindflix/gatheway/blob/main/public/favicon.ico?raw=true)
+
 ### Frontend répertoire
 
 https://github.com/mindflix/gatheway
