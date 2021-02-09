@@ -23,18 +23,7 @@ class UserController extends AbstractFOSRestController
     public function index(): Response
     {
         return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/UserController.php',
-        ]);
-    }
-    /**
-     * @Rest\Get("/patate")
-     * @return Response
-     */
-    public function yolo(): Response
-    {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
+            'message' => 'YESSSSSSSS!',
             'path' => 'src/Controller/UserController.php',
         ]);
     }
