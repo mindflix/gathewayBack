@@ -1,0 +1,29 @@
+App\Entity\Delivery:
+    type: entity
+    table: delivery
+    indexes:
+        id_order:
+            columns:
+                - id_order
+    id:
+        trackingNumber:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: tracking_number
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        idOrder:
+            targetEntity: Orders
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_order:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

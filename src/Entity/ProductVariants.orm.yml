@@ -1,0 +1,60 @@
+App\Entity\ProductVariants:
+    type: entity
+    table: product_variants
+    indexes:
+        id_color:
+            columns:
+                - id_color
+        id_product:
+            columns:
+                - id_product
+        id_size:
+            columns:
+                - id_size
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        quantity:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+    manyToOne:
+        idSize:
+            targetEntity: Sizes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_size:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idProduct:
+            targetEntity: Products
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_product:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idColor:
+            targetEntity: Colors
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_color:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

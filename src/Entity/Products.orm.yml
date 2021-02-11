@@ -1,0 +1,30 @@
+App\Entity\Products:
+    type: entity
+    table: products
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        price:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        description:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        sexe:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+    lifecycleCallbacks: {  }

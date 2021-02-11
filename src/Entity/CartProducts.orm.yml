@@ -1,0 +1,47 @@
+App\Entity\CartProducts:
+    type: entity
+    table: cart_products
+    indexes:
+        id_cart:
+            columns:
+                - id_cart
+        id_product:
+            columns:
+                - id_product
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        quantity:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+    manyToOne:
+        idCart:
+            targetEntity: Carts
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_cart:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idProduct:
+            targetEntity: ProductVariants
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_product:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

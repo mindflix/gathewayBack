@@ -1,0 +1,41 @@
+App\Entity\CollectionProducts:
+    type: entity
+    table: collection_products
+    indexes:
+        id_collection:
+            columns:
+                - id_collection
+        id_product:
+            columns:
+                - id_product
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        idCollection:
+            targetEntity: Collections
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_collection:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idProduct:
+            targetEntity: Products
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_product:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
